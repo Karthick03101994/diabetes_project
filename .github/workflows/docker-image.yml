@@ -26,7 +26,7 @@ jobs:
       - name: Build the Docker image
         id: build
         run: |
-          docker build . --file Dockerfile --tag file::$(date +%s)
+          docker build . --file Dockerfile --tag file:$(date +%s)
           docker tag my-image-name:latest ${{ secrets.DOCKER_USERNAME }}/file:$(date +%s)
 
       - name: Push Docker image to Docker Hub
