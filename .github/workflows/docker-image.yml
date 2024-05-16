@@ -22,7 +22,7 @@ jobs:
       
       - name: Build the Docker image
         run: |
-          docker build file:$(date +%s)
+          docker build file:file
 
       # Push the built image to Docker Hub or your container registry
       # - name: Push Docker image to Docker Hub
