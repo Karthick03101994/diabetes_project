@@ -26,9 +26,9 @@ jobs:
       - name: Build the Docker image
         id: build
         run: |
-          docker build . --file Dockerfile --tag file:latest
-          docker tag file:latest ${{ secrets.DOCKER_USERNAME }}/file:latest
+          docker build . --file Dockerfile --tag file:new
+          docker tag file:new ${{ secrets.DOCKER_USERNAME }}/file:new
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/file:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/file:new
